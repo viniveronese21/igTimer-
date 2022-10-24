@@ -24,12 +24,37 @@ export const FomrContainer = styled.div`
   gap: 0.5rem;
   color: ${(props) => props.theme['gray-100']};
   font-size: 1.125rem;
+  font-weight: bold;
   flex-wrap: wrap;
 `
 
-export const TaskInput = styled.input``
+const basedInput = styled.input`
+  background: transparent;
+  height: 2.5rem;
+  border: 0;
+  border-bottom: 2px solid ${(props) => props.theme['gray-500']};
+  font-weight: bold;
+  font-size: 1.125rem;
+  padding: 0 0.5rem;
+  color: ${(props) => props.theme['gray-100']};
 
-export const MinutesAmountInput = styled.input``
+  &:focus {
+    box-shadow: none;
+    border-color: ${(props) => props.theme['green-500']};
+  }
+
+  &::placeholder {
+    color: ${(props) => props.theme['gray-500']};
+  }
+`
+
+export const TaskInput = styled(basedInput)`
+  flex: 1;
+`
+
+export const MinutesAmountInput = styled(basedInput)`
+  width: 4rem;
+`
 
 export const CountDownContainer = styled.div`
   font-family: 'Roboto Mono', monospace;
